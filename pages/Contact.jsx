@@ -49,6 +49,13 @@ const Submit = styled.input`
   background-color: white;
   color: var(--blue);
   font-size: 1.5em;
+  &:hover {
+    cursor: pointer;
+    background-color: var(--blue);
+    color: white;
+  }
+  &:active {
+  }
 `;
 
 const TextArea = styled.textarea`
@@ -87,13 +94,13 @@ export default function Contact() {
   const [details, setDetails] = useState("");
 
   const formResult = {
-    name,
-    email,
-    phone,
-    callChecked,
-    textChecked,
-    emailChecked,
-    details,
+    name: name,
+    email: email,
+    phone: phone,
+    callChecked: callChecked,
+    textChecked: textChecked,
+    emailChecked: textChecked,
+    details: details,
   };
 
   function encode(data) {
@@ -123,6 +130,7 @@ export default function Contact() {
 
   function handleSuccess() {
     console.log("Success!!");
+    console.log(formResult);
   }
 
   // const email = "drawmestuff";

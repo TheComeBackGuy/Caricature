@@ -99,7 +99,7 @@ export default function Contact() {
     phone: phone,
     callChecked: callChecked.toString(),
     textChecked: textChecked.toString(),
-    emailChecked: textChecked.toString(),
+    emailChecked: emailChecked.toString(),
     details: details,
   };
 

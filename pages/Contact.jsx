@@ -97,9 +97,9 @@ export default function Contact() {
     name: name,
     email: email,
     phone: phone,
-    callChecked: callChecked,
-    textChecked: textChecked,
-    emailChecked: textChecked,
+    callChecked: callChecked.toString(),
+    textChecked: textChecked.toString(),
+    emailChecked: textChecked.toString(),
     details: details,
   };
 

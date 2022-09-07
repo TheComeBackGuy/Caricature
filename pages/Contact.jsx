@@ -184,12 +184,12 @@ export default function Contact() {
             />
           </Label>
           <p>How do you prefer to be contacted?</p>
-          <CheckboxContainer>
+          <CheckboxContainer name="string[]">
             <CheckboxLabels>
               Call{" "}
               <Checkbox
                 type="checkbox"
-                name="call-me"
+                name="contact-preference"
                 value={callChecked}
                 onChange={(e) => setCallChecked(!callChecked)}
               />
@@ -198,7 +198,7 @@ export default function Contact() {
               Text{" "}
               <Checkbox
                 type="checkbox"
-                name="text-me"
+                name="contact-preference"
                 value={textChecked}
                 onChange={(e) => setTextChecked(!textChecked)}
               />
@@ -207,7 +207,7 @@ export default function Contact() {
               Email{" "}
               <Checkbox
                 type="checkbox"
-                name="email-me"
+                name="contact-preference"
                 value={emailChecked}
                 onChange={(e) => setEmailChecked(!emailChecked)}
               />

@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Montserrat:wght@200;400;600&display=swap");
+
+a {
+  text-decoration: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --lightBlue: #8cd2f3;
+  --blue: #1e84b5;
+  --blueShadow: #11445c;
+  --blueBlack: #071c26;
+  --yellow: #f4e816;
+  --lightYellow: #fff891;
+}
+
+body {
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+}
+
+p {
+  line-height: 1.5em;
+}

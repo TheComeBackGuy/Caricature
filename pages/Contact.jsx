@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
 import Banner from "../images/banner.jpg";
 import CopyButton from "../components/CopyButton";
@@ -6,6 +6,7 @@ import GlobalLink from "../components/GlobalLink";
 import Layout from "../components/Layout";
 import LiveEventForm from "../components/LiveEventForm";
 import MiniHero from "../components/MiniHero";
+import ReCAPTCHA from "react-google-recaptcha";
 import styled from "styled-components";
 
 const BodyContainer = styled.section`
@@ -93,6 +94,9 @@ export default function Contact() {
   const [emailChecked, setEmailChecked] = useState(false);
   const [details, setDetails] = useState("");
   const [contactBy, setContactBy] = useState("");
+  const captchaRef = useRef(null);
+  // const token = captchaRef.current.getValue();
+
   const formResult = {
     name,
     email,
@@ -110,6 +114,8 @@ export default function Contact() {
   }
 
   function handleSubmit(event) {
+    const token = captchaRef.current.getValue();
+    captchaRef.current.reset();
     event.preventDefault();
     fetch("/", {
       method: "POST",
@@ -181,8 +187,8 @@ export default function Contact() {
               }}
             />
           </Label>
-          <p>How do you prefer to be contacted?</p>
-          <CheckboxContainer>
+          {/* <p>How do you prefer to be contacted?</p> */}
+          {/* <CheckboxContainer>
             <CheckboxLabels>
               Call{" "}
               <Checkbox
@@ -213,7 +219,7 @@ export default function Contact() {
                 onChange={(e) => setContactBy("email me")}
               />
             </CheckboxLabels>
-          </CheckboxContainer>
+          </CheckboxContainer> */}
           <Label>
             <p>
               Please leave the time and date of your event as well as any other
@@ -223,6 +229,10 @@ export default function Contact() {
               name="details"
               value={details}
               onChange={(e) => setDetails(e.target.value)}
+            />
+            <ReCAPTCHA
+              sitekey={process.env.NEXT_PUBLIC_SITE_KEY}
+              ref={captchaRef}
             />
             <Submit type="submit" value="Submit" />
           </Label>

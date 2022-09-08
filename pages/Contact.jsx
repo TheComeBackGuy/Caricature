@@ -191,8 +191,8 @@ export default function Contact() {
                 label="call"
                 type="checkbox"
                 name="contact-preference[]"
-                value={callChecked}
-                onChange={(e) => setCallChecked(!callChecked)}
+                value="call"
+                onChange={(e) => setCallChecked(e.target.value)}
               />
             </CheckboxLabels>
             <CheckboxLabels>
@@ -201,8 +201,8 @@ export default function Contact() {
                 label="text"
                 type="checkbox"
                 name="contact-preference[]"
-                value={textChecked}
-                onChange={(e) => setTextChecked(!textChecked)}
+                value="text"
+                onChange={(e) => setTextChecked(e.target.value)}
               />
             </CheckboxLabels>
             <CheckboxLabels>
@@ -211,8 +211,8 @@ export default function Contact() {
                 label="email"
                 type="checkbox"
                 name="contact-preference[]"
-                value={emailChecked}
-                onChange={(e) => setEmailChecked(!emailChecked)}
+                value="email"
+                onChange={(e) => setEmailChecked(e.target.value)}
               />
             </CheckboxLabels>
           </CheckboxContainer>

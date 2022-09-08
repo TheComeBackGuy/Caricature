@@ -187,7 +187,7 @@ export default function Contact() {
               Call{" "}
               <Checkbox
                 type="radio"
-                name="contact-preference"
+                name="contact-by"
                 value="call"
                 // checked={(e) => setContactBy(e.target.value)}
                 onChange={(e) => setContactBy("call me")}
@@ -197,7 +197,7 @@ export default function Contact() {
               Text{" "}
               <Checkbox
                 type="radio"
-                name="contact-preference"
+                name="contact-by"
                 value="text"
                 // checked={(e) => setContactBy(e.target.value)}
                 onChange={(e) => setContactBy("text me")}
@@ -207,7 +207,7 @@ export default function Contact() {
               Email{" "}
               <Checkbox
                 type="radio"
-                name="contact-preference"
+                name="contact-by"
                 value="email"
                 // checked={(e) => setContactBy(e.target.value)}
                 onChange={(e) => setContactBy("email me")}

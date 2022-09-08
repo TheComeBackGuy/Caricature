@@ -94,11 +94,11 @@ export default function Contact() {
   const [details, setDetails] = useState("");
   const [contactBy, setContactBy] = useState("");
   const formResult = {
-    name: name,
-    email: email,
-    phone: phone,
-    contactBy: contactBy,
-    details: details,
+    name,
+    email,
+    phone,
+    contactBy,
+    details,
   };
 
   function encode(data) {

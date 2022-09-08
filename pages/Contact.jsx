@@ -92,14 +92,12 @@ export default function Contact() {
   const [textChecked, setTextChecked] = useState(false);
   const [emailChecked, setEmailChecked] = useState(false);
   const [details, setDetails] = useState("");
-
+  const [contactBy, setContactBy] = useState("");
   const formResult = {
     name: name,
     email: email,
     phone: phone,
-    callChecked: callChecked.toString(),
-    textChecked: textChecked.toString(),
-    emailChecked: emailChecked.toString(),
+    contactBy: contactBy,
     details: details,
   };
 
@@ -188,31 +186,33 @@ export default function Contact() {
             <CheckboxLabels>
               Call{" "}
               <Checkbox
-                label="call"
-                type="checkbox"
-                name="contact-preference[]"
+                type="radio"
+                name="contact-preference"
                 value="call"
-                onChange={(e) => setCallChecked(e.target.value)}
+                checked={(e) => setContactBy(e.target.value)}
+
+                // onChange={(e) => setCallChecked(e.target.value)}
               />
             </CheckboxLabels>
             <CheckboxLabels>
               Text{" "}
               <Checkbox
-                label="text"
-                type="checkbox"
-                name="contact-preference[]"
+                type="radio"
+                name="contact-preference"
                 value="text"
-                onChange={(e) => setTextChecked(e.target.value)}
+                checked={(e) => setContactBy(e.target.value)}
+
+                // onChange={(e) => setTextChecked(e.target.value)}
               />
             </CheckboxLabels>
             <CheckboxLabels>
               Email{" "}
               <Checkbox
-                label="email"
-                type="checkbox"
-                name="contact-preference[]"
+                type="radio"
+                name="contact-preference"
                 value="email"
-                onChange={(e) => setEmailChecked(e.target.value)}
+                checked={(e) => setContactBy(e.target.value)}
+                // onChange={(e) => setEmailChecked(!emailChecked)}
               />
             </CheckboxLabels>
           </CheckboxContainer>

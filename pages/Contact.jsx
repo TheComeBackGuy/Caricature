@@ -190,7 +190,7 @@ export default function Contact() {
               <Checkbox
                 type="checkbox"
                 name="contact-preference[]"
-                value="call me"
+                value={callChecked}
                 onChange={(e) => setCallChecked(!callChecked)}
               />
             </CheckboxLabels>
@@ -199,7 +199,7 @@ export default function Contact() {
               <Checkbox
                 type="checkbox"
                 name="contact-preference[]"
-                value="text me"
+                value={textChecked}
                 onChange={(e) => setTextChecked(!textChecked)}
               />
             </CheckboxLabels>
@@ -208,7 +208,7 @@ export default function Contact() {
               <Checkbox
                 type="checkbox"
                 name="contact-preference[]"
-                value="email me"
+                value={emailChecked}
                 onChange={(e) => setEmailChecked(!emailChecked)}
               />
             </CheckboxLabels>

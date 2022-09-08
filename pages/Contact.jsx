@@ -189,9 +189,8 @@ export default function Contact() {
                 type="radio"
                 name="contact-preference"
                 value="call"
-                checked={(e) => setContactBy(e.target.value)}
-
-                // onChange={(e) => setCallChecked(e.target.value)}
+                // checked={(e) => setContactBy(e.target.value)}
+                onChange={(e) => setContactBy("call me")}
               />
             </CheckboxLabels>
             <CheckboxLabels>
@@ -200,9 +199,8 @@ export default function Contact() {
                 type="radio"
                 name="contact-preference"
                 value="text"
-                checked={(e) => setContactBy(e.target.value)}
-
-                // onChange={(e) => setTextChecked(e.target.value)}
+                // checked={(e) => setContactBy(e.target.value)}
+                onChange={(e) => setContactBy("text me")}
               />
             </CheckboxLabels>
             <CheckboxLabels>
@@ -211,8 +209,8 @@ export default function Contact() {
                 type="radio"
                 name="contact-preference"
                 value="email"
-                checked={(e) => setContactBy(e.target.value)}
-                // onChange={(e) => setEmailChecked(!emailChecked)}
+                // checked={(e) => setContactBy(e.target.value)}
+                onChange={(e) => setContactBy("email me")}
               />
             </CheckboxLabels>
           </CheckboxContainer>

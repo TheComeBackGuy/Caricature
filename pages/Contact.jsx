@@ -188,6 +188,7 @@ export default function Contact() {
             <CheckboxLabels>
               Call{" "}
               <Checkbox
+                label="call"
                 type="checkbox"
                 name="contact-preference[]"
                 value={callChecked}
@@ -197,6 +198,7 @@ export default function Contact() {
             <CheckboxLabels>
               Text{" "}
               <Checkbox
+                label="text"
                 type="checkbox"
                 name="contact-preference[]"
                 value={textChecked}
@@ -206,6 +208,7 @@ export default function Contact() {
             <CheckboxLabels>
               Email{" "}
               <Checkbox
+                label="email"
                 type="checkbox"
                 name="contact-preference[]"
                 value={emailChecked}

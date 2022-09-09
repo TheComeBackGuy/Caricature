@@ -1,8 +1,9 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import Banner from "../images/banner.jpg";
 import CopyButton from "../components/CopyButton";
 import GlobalLink from "../components/GlobalLink";
+import Head from "next/head";
 import Layout from "../components/Layout";
 import LiveEventForm from "../components/LiveEventForm";
 import MiniHero from "../components/MiniHero";
@@ -50,6 +51,7 @@ const Submit = styled.input`
   background-color: white;
   color: var(--blue);
   font-size: 1.5em;
+  disabled: true;
   &:hover {
     cursor: pointer;
     background-color: var(--blue);
@@ -89,13 +91,10 @@ export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [callChecked, setCallChecked] = useState(false);
-  const [textChecked, setTextChecked] = useState(false);
-  const [emailChecked, setEmailChecked] = useState(false);
   const [details, setDetails] = useState("");
   const [contactBy, setContactBy] = useState("");
-  const captchaRef = useRef(null);
-  // const token = captchaRef.current.getValue();
+  const [token, setToken] = useState("");
+  const recaptchaRef = useRef(null);
 
   const formResult = {
     name,
@@ -114,9 +113,8 @@ export default function Contact() {
   }
 
   function handleSubmit(event) {
-    const token = captchaRef.current.getValue();
-    captchaRef.current.reset();
     event.preventDefault();
+
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -230,10 +228,7 @@ export default function Contact() {
               value={details}
               onChange={(e) => setDetails(e.target.value)}
             />
-            <ReCAPTCHA
-              sitekey={process.env.NEXT_PUBLIC_SITE_KEY}
-              ref={captchaRef}
-            />
+
             <Submit type="submit" value="Submit" />
           </Label>
         </Form>
